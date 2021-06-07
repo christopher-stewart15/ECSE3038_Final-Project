@@ -113,20 +113,15 @@ window.onload = function(){
     var elements = document.getElementsByClassName("patient_img");
 
 
-// function move() {
-//      window.location = "individual.html";
-// }
 
-// for (var i = 0; i < elements.length; i++) {
-//     elements[i].addEventListener('click', move, false);
-// }
+
     displayPatientData();
 
     window.setTimeout(function(){
         var deleteButtons = document.querySelectorAll(".delete");
         deleteButtons.forEach(button => {
             button.addEventListener("click", function(){
-                // Send delete request to server
+               
                 console.log("DELETE "+ button.id);
                 fetch(patientPath +"/"+ button.id, {
                     method: "DELETE",
@@ -143,23 +138,23 @@ window.onload = function(){
         var editButtons = document.querySelectorAll(".edit");
         editButtons.forEach(button => {
             button.addEventListener("click", function(){
-                // Navigate to page where edits can be made
+               
                 console.log(button.id);
 
-                // Save ID to session storage and redirect to the edit page
+               
                 sessionStorage.setItem("patient_id", button.id);
                 location.href = "add_patient.html";
                 window.open("add_patient.html");
             });
         });
         
-    // Redirect user to the page where they can view a patients data in detail
+    
     var patientImg = document.querySelectorAll("img");
     patientImg.forEach(img => {
         img.addEventListener("click", function(){
             console.log(img.id);
 
-            // Save ID to session storage and redirect to the edit page
+            
             sessionStorage.setItem("patient_id", img.id);
             location.href = "individual.html";
             window.open("individual.html");
@@ -167,15 +162,15 @@ window.onload = function(){
     })
 
     }, 3000);   
-     // Process al subsequent SSE
+     
     eventSource.addEventListener("online", function(e) {
-        // Extract the data sent from the server
+        
         info = JSON.parse(e.data);
         position = info.position;
         p_id = info.id;
         console.log(position +" "+p_id);
 
-        // Change the HTML to reflect the change in the sensor reading
+        
         var searchID = p_id + ":";
         var span2 = document.getElementById(searchID);
         span2.innerHTML = position;

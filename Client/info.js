@@ -1,4 +1,3 @@
-/// Get id from session and clear the session
 var id = sessionStorage.getItem("patient_id");
 console.log(id);
 sessionStorage.removeItem("patient_id");
@@ -12,10 +11,10 @@ button.addEventListener("click", function(event){
     let patient_id = document.getElementById("patient_id").value;
 
     if((fname == "")||(lname == "")||(patient_id == "")||(age == "")){
-        // If any of the fields are left blank then make PATCH request
+        
         console.log("Make PATCH Request");
 
-        // Construct the JSON body to be sent in the PATCH request
+        
         jsonBody = {};
         for(i=0; i< 4; i++){
             if (fname != ""){
@@ -32,7 +31,7 @@ button.addEventListener("click", function(event){
             }                    
         }
 
-        // Send the PATCH request
+     
         fetch("http://10.10.4.124:5000/api/patient/" + id, {
             method: "PATCH",
             body: JSON.stringify(jsonBody),
@@ -44,17 +43,17 @@ button.addEventListener("click", function(event){
         .then((json) => console.log(json));
         console.log("Card Updated");
 
-        // Clear the boxes so the user knows his request has gone through
+       
         document.getElementById("fname").value = "";
         document.getElementById("lname").value = "";
         document.getElementById("age").value = "";
         document.getElementById("patient_id").value = "";
     }
     else{
-        // If all fields are full, then make POST request
+        
         console.log("Patient Added");
 
-        // Construct the JSON body to be sent in the POST request
+        
         jsonBody = {
             "fname": fname,
             "lname": lname,
@@ -62,7 +61,7 @@ button.addEventListener("click", function(event){
             "patient_id": patient_id
         };
 
-        // Send the POST request 
+      
         fetch("http://10.10.4.124:5000/api/patient", {
             method: "POST",
             body: JSON.stringify(jsonBody),
@@ -73,7 +72,7 @@ button.addEventListener("click", function(event){
         .then((res) => res.json)
         .then((json) => console.log(json));
 
-        // Clear the boxes so the user knows his request has gone through
+        
         document.getElementById("fname").value = "";
         document.getElementById("lname").value = "";
         document.getElementById("age").value = "";

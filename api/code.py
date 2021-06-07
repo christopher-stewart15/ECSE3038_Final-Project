@@ -19,9 +19,6 @@ app.config["MONGO_URI"] = mongo_uri
 mongo = PyMongo(app)
 cors = CORS(app)
 
-# Initialize some of the record data
-pos = 100
-id = "aa:aa:aa:aa:aa"
 
 class RecordSchema(Schema):
     patient_id = fields.String(required=True)
