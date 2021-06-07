@@ -1,0 +1,186 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+    position: fixed;
+    background:red;
+    padding: 20px;
+    width: 100%;
+    height: 30px;
+}
+.header_text h3{
+    color: black;
+    margin-top: 0px;
+    margin-left: 550px;
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 900;
+}
+.left_area span{
+    color:black;
+}
+
+.sidebar{
+    background:darkred;
+    margin-top: 70px;
+    padding-top: 30px;
+    position: fixed;
+    left: 10;
+    width: 250px;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: 0.5s;
+    transition-property: left;
+}
+
+.sidebar h4{
+    color:white;
+    margin-top: 0;
+    margin-bottom: 20px;
+    margin-left: 50px;
+}
+.sidebar a{
+    color: #fff;
+    display: block;
+    width: 100%;
+    line-height: 60px;
+    text-decoration: none;
+    padding-left: 40px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    transition-property: background;
+    
+}
+.sidebar a:hover{
+    background:red;
+}
+.sidebar i{
+    padding-right: 10px;
+} 
+ 
+#check:checked ~ .sidebar a span{
+    display: none;
+} 
+
+.content{
+    margin-left: 250px;
+    
+    height: 100%;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.patient_data{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-top: 120px;
+    margin-bottom: 50px;
+    background:yellow;
+    border: solid black 2px;
+    border-radius: 30px;
+    border-style: solid;
+    overflow: hidden;
+}
+.patient_img{
+    width: 220px;
+    padding-left: 50px;
+    height: 180px;
+    background: white;
+    display: flex;
+    border: black;
+    flex-direction: column;
+   
+}
+.patient_img img{
+    padding-left: 1px;
+    border: black;
+    padding-right: 25px;
+    padding-top: 22px;
+    padding-bottom: 0px;
+    margin-top:-20px;
+    width: 200px;
+    height: 180px;
+}
+.patient_img img:hover{
+    cursor: pointer;
+}
+.buttons{
+    align-self: left;
+    background: yellow;
+    display: flex;
+}
+.edit{
+    align-self: left;
+    width: 30px;
+    height:30px;
+    padding-left: 20px;
+    padding-top: -5px;
+    background:green;
+    color: white;
+ 
+}
+.edit:hover{
+    cursor: pointer;
+    color:black;
+}
+.delete{
+    width: 20px;
+    height:30px;
+    padding-left: 10px;
+    padding-top: -5px;
+    background: red;
+    color:white;
+    border: none;
+}
+.delete:hover{
+    cursor: pointer;
+    color: black;
+}
+.display{
+    width: 270px;
+    height: 210px;
+    overflow: hidden;
+}
+.display .first_name{
+    height: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifs;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 23px;
+    
+}
+.display .last_name{
+    background-color: green;
+    height: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}
+.display .position{
+    height: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+   
+}
+.display .patient_id{
+    height: 60px;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 700;
+}

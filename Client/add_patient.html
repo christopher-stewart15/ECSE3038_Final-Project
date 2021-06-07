@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="designs/style_add_patient.css">
+</head>
+<body>
+    
+    <!-----header begins----->
+    <header>
+        <div class="header_text">
+            <h3>PATIENT MONITORING SYSTEM</h3>
+        </div>
+    </header>
+    <!-----header ends----->
+
+    <!-----sidebar begins----->
+    <div class="sidebar">
+        </center>
+        <h4>MAIN MENU</h4>
+        <a href="index.html"><i class="fas fa-users"></i><span>Dashboard</span></a>
+        <a href="add_patient.html"><i class="fas fa-plus"></i><span>Add Patient</span></a>
+    </div>
+    <!-----sidebar ends----->
+
+    <!-----page content begins----->
+    <div class="content">
+        <div class="container">
+            <div class="heading">Add/ Edit Patient</div>
+            
+            <form action="#">
+                <div class="patient_info">
+                    <div class="input_box">
+                        <span class="details">First Name:</span>
+                        <input type="text" id="first_name" placeholder="Enter First Name">
+                    
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Last Name:</span>
+                        <input type="text" id="last_name" placeholder="Enter Last Name">
+                    
+                    </div> 
+                    <div class="input_box">
+                        <span class="details">Age:</span>
+                        <input type="text" id="age" placeholder="Enter Age">
+                    
+                    </div>
+                    <div class="input_box">
+                        <span class="details">Patient ID:</span>
+                        <input type="text" id="patient_id" placeholder="Enter ID">
+                    
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="ADD">
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-----page content ends----->
+    <script type="text/javascript" src="info.js"></script>
+</body>
+</html>
