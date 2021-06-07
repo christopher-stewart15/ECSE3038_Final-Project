@@ -148,7 +148,7 @@ header{
     height: 210px;
     overflow: hidden;
 }
-.display .first_name{
+.display .fname{
     height: 70px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serifs;
     display: flex;
@@ -157,7 +157,7 @@ header{
     font-size: 23px;
     
 }
-.display .last_name{
+.display .lname{
     background-color: green;
     height: 70px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

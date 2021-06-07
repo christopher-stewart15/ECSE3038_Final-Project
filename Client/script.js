@@ -41,15 +41,15 @@ function createPatientCards(patients, records){
     displayDiv.classList.add("display");
 
     var firstNameDiv = document.createElement("DIV");
-    firstNameDiv.classList.add("first_name");
+    firstNameDiv.classList.add("fname");
     var firstNameSpan1 = document.createElement("SPAN");
-    firstNameSpan1.innerHTML = patients.first_name;
+    firstNameSpan1.innerHTML = patients.fname;
     firstNameDiv.append(firstNameSpan1);
 
     var lastNameDiv = document.createElement("DIV");
-    lastNameDiv.classList.add("last_name");
+    lastNameDiv.classList.add("lname");
     var lastNameSpan1 = document.createElement("SPAN");
-    lastNameSpan1.innerHTML = patients.last_name;
+    lastNameSpan1.innerHTML = patients.lname;
     lastNameDiv.append(lastNameSpan1);
 
     var positionDiv = document.createElement("DIV");
