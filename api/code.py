@@ -30,15 +30,15 @@ class RecordSchema(Schema):
     last_updated = fields.String(required=True)
 
 class PatientSchema(Schema):
-    first_name = fields.String(required=True)
-    last_name = fields.String(required=True)
+    fname = fields.String(required=True)
+    lname = fields.String(required=True)
     age = fields.Integer(required=True)
     patient_id = fields.String(required=True)
 
 
 
 @app.route("/api/patient", methods=["GET"])
-def get_all_patient_data():
+def get_Patients():
     
     print("MADE GET REQUEST")
     patients = mongo.db.patients.find()
@@ -47,28 +47,28 @@ def get_all_patient_data():
 
 
 @app.route("/api/patient/<id>", methods=["GET"])
-def get_single_patient_data(id):
+def get_Spec_Patient(id):
   
     patient = mongo.db.patients.find_one({"patient_id": id})
     
     return jsonify(loads(dumps(patient)))
 
 @app.route("/api/patient", methods=["POST"])
-def post_patient_data():
+def add_Patient():
     
     print("PATIENT ADDED")
     try:
         now = datetime.now()
         dt = now.strftime("%d/%m/%Y %H:%M:%S")
 
-        first_name = request.json["first_name"]
-        last_name = request.json["last_name"]
+        fname = request.json["fname"]
+        lname = request.json["lname"]
         age = request.json["age"]
         patient_id = request.json["patient_id"]
 
         jsonBody = {
-            "first_name": first_name,
-            "last_name": last_name,
+            "fname": fname,
+            "lname": lname,
             "age": age,
             "patient_id": patient_id
         }
@@ -80,14 +80,14 @@ def post_patient_data():
 
         return{
             "success": True,
-            "message": "Data saved successfully",
+            "message": "Patient Added Successfully",
             "date": dt
         }
     except ValidationError as e:
         return e.messages, 400
 
 @app.route("/api/patient/<id>", methods=["PATCH"])
-def patch_patient_data(id):
+def edit_Patient(id):
     mongo.db.patients.update_one({"patient_id": id}, {"$set": request.json})
     patient = mongo.db.patients.find_one({"patient_id": id})
 
@@ -141,7 +141,7 @@ def get_graph_data(id):
     return jsonify(loads(json.dumps(graph_data)))
 
 @app.route("/api/record/<id>", methods=["GET"])
-def get_single_record_data(id):
+def get_Spec_Record(id):
     '''
         This route handles the individual GET requests made to the server by the 
         frontend. It gets the record data so that the position of a patient can
@@ -169,7 +169,7 @@ def listen():
     return Response(respond_to_client(), mimetype='text/event-stream')
 
 @app.route("/api/record", methods=["POST"])
-def post_record_data():
+def post_record():
     '''
         This route handles the POST requests made to the server by the 
         embedded client
