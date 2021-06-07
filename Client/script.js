@@ -1,4 +1,3 @@
-var serverURL = "http://10.10.4.124:5000";
 var position = 0;
 var p_id = "";
 var spanNum = 0;
@@ -78,13 +77,13 @@ function createPatientCards(patients, records){
     return patientDataDiv;
 }
 
-var patientPath = serverURL + "/api/patient";
+var patientPath = "http://10.10.4.124:5000/api/patient";
 function getPatientData(){
     console.log("Patient Data");
     return fetch(patientPath).then(res => res.json()).then(json => json);
 }
 
-var recordPath = serverURL + "/api/record/";
+var recordPath = "http://10.10.4.124:5000/api/record/";
 function getPosition(id){
     return fetch(recordPath + id).then(res => res.json()).then(json => json);
 }

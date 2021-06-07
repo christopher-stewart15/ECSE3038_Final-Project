@@ -1,7 +1,4 @@
-// URL of the server 
-var serverURL = "http://10.10.4.124:5000";
-
-// Get id from session and clear the session
+/// Get id from session and clear the session
 var id = sessionStorage.getItem("patient_id");
 console.log(id);
 sessionStorage.removeItem("patient_id");
@@ -36,7 +33,7 @@ button.addEventListener("click", function(event){
         }
 
         // Send the PATCH request
-        fetch(serverURL + "/api/patient/" + id, {
+        fetch("http://10.10.4.124:5000/api/patient/" + id, {
             method: "PATCH",
             body: JSON.stringify(jsonBody),
             headers:{
@@ -66,7 +63,7 @@ button.addEventListener("click", function(event){
         };
 
         // Send the POST request 
-        fetch(serverURL + "/api/patient", {
+        fetch("http://10.10.4.124:5000/api/patient", {
             method: "POST",
             body: JSON.stringify(jsonBody),
             headers:{
