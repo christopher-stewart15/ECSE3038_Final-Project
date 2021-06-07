@@ -99,7 +99,7 @@ int getTemperature(int testing){
 
 String generatePostRequest(String route, String portNumber, int cLength, String pData) {
   String requestType = "POST /" + route + " HTTP/1.1\r\n";
-  String hostInfo = "Host: 192.168.1.11:" + portNumber + "\r\n";
+  String hostInfo = "Host: 10.10.4.123:" + portNumber + "\r\n";
   String contentType = "Content-Type: application/json\r\n";
   String contentLength = "Content-Length: " + String(cLength) + "\r\n\r\n";
   String postData = pData + "\r\n\r\n";
@@ -144,6 +144,6 @@ void loop() {
   String postRequest = generatePostRequest("api/record", "5000", postData.length(), postData);  
   String CIPSend = generateCIPSend(postRequest.length());
 
-  sendData("AT+CIPSTART=\"TCP\",\"192.168.1.6\",5000\r\n", 3000, DEBUG);
+  sendData("AT+CIPSTART=\"TCP\",\"10.10.4.125\",5000\r\n", 3000, DEBUG);
   sendData(CIPSend, 1000, DEBUG);
   sendData(postRequest, 5000, DEBUG);
